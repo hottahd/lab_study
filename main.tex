@@ -6,52 +6,146 @@
 \input{preamble.tex}
 \begin{document}
 \maketitle
+\tableofcontents
+\clearpage
 \section{はじめに}
 この文章では、堀田のもとで太陽・恒星物理学の研究を始める上で「最低限」必要な物理学の知識についてまとめます。少なくともこれだけあれば、何とか研究に必要な勉強を始められるというものです。会話する上で、これは知っていることが前提とされると言い換えても構いません。\par
 これ以上やってはいけないという意味ではまったくありませんし、むしろ余裕があるならば、やるべきです。この文章では、たとえば統計力学や量子力学には触れません。太陽・恒星物理学の磁気流体力学のみを研究対象にするならば、これらは必ずしも必要ではありません。しかし、これらは一般の物理学科を卒業した学生ならば履修しており、その考え方は非常に有用です。例を挙げるならば、量子力学で登場するBorn近似は、日震学にも使われより適切な太陽内部の波動伝播をモデル化しています。また、将来研究者、とくに大学教員になりたいみなさんは広い物理学を理解しておくことは、採用の際に重要となります。さらには、そもそもこれらの学問を学ぶことは非常に楽しいです。
 \par
 しかし、近年では、私のもとに訪れる学生が必ずしも物理学科出身でないことが増えました。それは1つ興味深いことであるのですが、彼/彼女らに物理学科で4年で学ぶ事柄を大学院に入ってからすべて追ってもらうのは得策でないことは明らかです。そこで、「最低限」必要な物理学をまとめておくことに思い至りました。
 \par
-ひとまずということで、
+ひとまずということで、作っていますが定期的に更新していく予定です。
 
 \subsection{この文章の読み方}
 この文章では、答えを示さないままいくつかの知っておいてほしい物理学的な事柄を示します。教科書を見ながら、それを自分で深くまで理解し、咀嚼してください。\par
 物理学では、多くの数式が登場しますが、それを物理的に説明することが重要です。漫然と式変形するのではなく、それぞれの段階で数式がどのような現実の状況を表しているかを説明できるように意識してください。\par
-また、式を導く際は、「次元」に細心の注意を払いましょう。次元とは単位のことです。たとえば重力下の運動方程式であれば
+この文章は、githubで公開しているので、各人で\LaTeX ソースファイルをダウンロードの上、解答を作ってみると良いでしょう。
+\par
+式を導く際は、「次元」に細心の注意を払いましょう。次元とは単位のことです。たとえば重力下の運動方程式であれば
 \begin{align}
     m\frac{d\bm{v}}{dt} = m \bm{g}
 \end{align}
 です。$m$は$\mathrm{g}$、$\bm{v}$は$\mathrm{cm~s^{-1}}$、$t$は$s$の単位を持つので、左辺は$\mathrm{g~cm~s^{-2}}$の次元を持っています。一方、右辺は$g$が$\mathrm{cm~s^{-2}}$の次元を持っているので、同様に$\mathrm{g~cm~s^{-2}}$の次元を持っています。当然、左辺と右辺の次元は同じになるのです。また、次元の違うもの同士を足し弾きすることはできません。これが守られていないと、物理をさっぱり理解していない証明となってしまいます。よく注意して式変形を行いましょう。
 \subsection{記法}
-この文章では、ベクトルの演算は$\nabla$、$\nabla\cdot$、$\nabla\times$を用いて行われ$\mathrm{grad}$、$\mathrm{div}$、$\mathrm{rot}$は使われません。学生の皆さんにもそのようにすることを強く推奨します。前者は、微分演算をあたかもベクトルのように扱っており、その正体を掴みやすいです。
+この文章では、ベクトルの演算は$\nabla$, $\nabla\cdot$, $\nabla\times$を用いられて、$\mathrm{grad}$, $\mathrm{div}$, $\mathrm{rot}$は使われません。学生の皆さんにもそのようにすることを強く推奨します。前者は、微分演算をあたかもベクトルのように扱っており、その正体を掴みやすいです。たとえば$\mathrm{div}~\bm{A}$と書いてあっても、これがベクトルなのかスカラーなのかは一目ではわかりませんが。$\nabla\cdot\bm{A}$と書いてあれば、ベクトルの内積のように見え、答えがスカラーであることが一目瞭然です。
 
 \section{物理数学}
 \subsection{微積分}
 \begin{itemize}
-    \item 微分に数学的な定義は？
-    \item 常微分と偏微分の違いは？
+    \item 微分の数学的な定義は何ですか？$x^2$を$x$で微分すると$2x$になることを証明してください。
+    \item 常微分と偏微分の違いは何ですか？
+    \item 連鎖律について説明してください。多変数の場合はどうなりますか？
 \end{itemize}
 \subsection{ベクトル解析}
+\subsubsection{定理}
+ガウスの定理、ストークスの定理をそれぞれ導出して、物理的な意味を説明してください。
+\subsubsection{公式}
+ベクトル解析の公式は多岐にわたるので、必ずしもすべて覚える必要はないです。何か良い公式集を手元に常に用意しておきましょう。プラズマ物理をやる上では、NRL Plasma formularyがオススメです。Google検索をするとすぐに出てきます。それでも以下の公式は、暗記して、すぐに導出できるようになっておきましょう。
+\begin{align*}
+    \nabla\times(f\bm{A}) &= f\nabla\times\bm{A} + \nabla f \times \bm{A}\\
+    \nabla\cdot(f\bm{A}) &= f\nabla\cdot\bm{A} + \bm{A}\cdot\nabla f\\
+    \nabla\times \nabla f &= 0 \\
+    \nabla \cdot \left(\nabla \times \bm{A}\right) &= 0 \\
+    \nabla \times(\bm{A}\times\bm{B}) &= \bm{A}\left(\nabla\cdot\bm{B}\right) - \bm{B}\left(\nabla\cdot\bm{A}\right)
+    + \left(\bm{B}\cdot\nabla\right)\bm{A} - \left(\bm{A}\cdot\nabla\right)\bm{B}\\
+    \nabla\times\nabla\bm{A} &= \nabla\left(\nabla\cdot\bm{A}\right) - \nabla^2 \bm{A}
+\end{align*}
+証明の際には、愚直に成分に分けるのではなくアインシュタインの縮約、クロネッカーのデルタ、レビチビタの記号を使うのが良いでしょう。
+1つだけ例を示します。ベクトル解析の公式の証明では式が煩雑になるので、微分を
+\begin{align}
+    \frac{\partial}{\partial x_i} \rightarrow \partial_i
+\end{align}
+と書き換えられます。ここで$x_1$, $x_2$, $x_3$は$x$, $y$, $z$を表します。するとレビチビタの記号\footnote{知らない場合は調べてください}を用いると外積と回転は
+\begin{align}
+    \bm{A}\times\bm{B} &= \epsilon_{ijk} A_j B_k \\
+    \left(\nabla\times\bm{A}\right)_i &= \epsilon_{ijk}\partial_j A_k
+\end{align}
+と書くことができます。これを用いるとたとえば最初の式は
+\begin{align}
+    \left[\nabla\times\left(f\bm{A}\right)\right]_i &= \epsilon_{ijk}\partial_j \left(fA_k\right) \nonumber\\
+    & = \epsilon_{ijk}\partial_j \left(fA_k\right) \nonumber\\
+    & = f\epsilon_{ijk} \partial_j A_k + \epsilon_{ijk}\left(\partial_j f\right) A_k \nonumber\\
+    & = \left[f\nabla\times \bm{A} + \nabla f \times \bm{A}\right]
+\end{align}
+とこともなげに導出できます。上式ではベクトルの$i$成分について証明していますが、ここで$i$が何かは問うていないので、この証明だけで全成分が証明できたことになります。このようにして他の公式も導出してみましょう。
+\par
+レビチビタの積の公式は
+\begin{align}
+    \epsilon_{ijk}\epsilon_{iml} = \delta_{jm}\delta_{kl} - \delta_{jl}\delta_{km}
+\end{align}
+は、覚えておくことは必須ですが、導出は結構難しく、必ずしも見ておかなくても良いと思います。
+\subsubsection{球座標}
+太陽を全球的に扱うためには、球座標でのベクトルの取り扱いに慣れ親しむ必要があります。球座標での勾配、発散、回転のあらわな表式を何かの公式を見て書き下してください。また、発散と回転について、ガウスの定理・ストークスの定理と見比べて物理的な意味を説明してください。
+\subsection{線形代数}
+行列の固有値・固有ベクトル・対角化について説明してください。また、この考えを用いて、2次形式の標準化について説明してください。
 \subsection{フーリエ変換}
+フーリエ級数にも触れながら、フーリエ変換の物理的な意味を説明してください。
 \section{力学}
-力学には、多くの魅力的な問題があるが、必ずしもそれらが解ける必要はない(大学院試験では、よく出されますが。。)。それよりも、力学で定義されているいくつかの概念をしっかり理解して、その後に進むことが非常に大切です。
+力学には、多くの魅力的な演習問題がありますが、必ずしもそれらすべてが解ける必要はないです(大学院試験では、よく出されますが...)。それよりも、力学で定義されているいくつかの概念をしっかり理解して、その後に進むことが大切です。
 \subsection{座標}
 2次元極座標での加速度の動径成分$a_r$、$a_\theta$はそれぞれ
 \begin{align}
     a_r &= \ddot{r} - r\dot{\theta}^2 \\
     a_\theta &= r\ddot{\theta} + 2\dot{r}\dot{\theta}
 \end{align}
-となることを証明せよ
+となることを証明してください。
 \subsection{運動方程式}
 \subsubsection{保存力}
 力$\bm{F}$が保存力であるとき
 \begin{align}
     \bm{F} = - \nabla U
 \end{align}
-とポテンシャル$U$を用いて表せることを証明せよ。
+とポテンシャル$U$を用いて表せることを証明してください。
 \subsection{力学的エネルギー保存}
-質点にかかる力が保存力だけの場合に、力学的エネルギーが保存することを証明せよ。
-
+質点にかかる力が保存力だけの場合に、力学的エネルギーが保存することを証明してください。
+\subsection{角運動量保存}
+質点にかかる力が中心力だけの場合に、角運動量が保存することを証明してください。
+\subsection{慣性系・非慣性系・回転する座標系}
+慣性系と非慣性系の定義を説明してください。\par
+角速度$\omega$で回転する座標系で遠心力・コリオリ力を導出してください。角速度ベクトルはどの方向を向いていますか？
 \section{電磁気学}
+\subsection{マクスウェル方程式}
+以下のその導出過程、マクスウェル方程式の物理的な意味を説明してください。
+\begin{align*}
+    \nabla\cdot\bm{D} &= \rho_e \\
+    \nabla\cdot\bm{B} &= 0 \\
+    \nabla\times\bm{H} &= \bm{i}_e + \frac{\partial \bm{D}}{\partial t} \\
+    \nabla\times\bm{E} &= - \frac{\partial \bm{B}}{\partial t}
+ \end{align*}
+ また、真空のマクスウェル方程式から波動方程式を導いて、電磁波が光であることを示してください。
+\subsection{波動}
+電磁場の電場成分はたとえば
+\begin{align}
+    \bm{E} = \bm{E}_0 \sin\left(\bm{k}\cdot\bm{x} - \omega t\right)
+\end{align}
+と書くことができます。この電磁波が波数ベクトル$\bm{k}$方向に伝播することを示しなさい。
+\subsection{位相速度と群速度}
+位相速度と群速度について、数式を使いながら説明してください。
+\subsection{ベクトルポテンシャル・スカラーポテンシャル}
+マクスウェル方程式の帰結として、ベクトルポテンシャル$\bm{A}$, スカラーポテンシャル$\phi$を用いて
+電場・磁場は以下のように表すことができることを証明してください。
+\begin{align}
+    \bm{B} &= \nabla\times \bm{A} \\
+    \bm{E} &= -\frac{\partial \bm{A}}{\partial t} - \nabla \phi
+\end{align}
+\subsection{電磁場のエネルギー}
+以下の電磁場の時間発展の方程式をマクスウェル方程式から導出し、それぞれの項の物理的な意味を説明してください。
+\begin{align}
+    \frac{\partial}{\partial t}
+    \left(\frac{1}{2}\bm{E}\cdot\bm{D} + \frac{1}{2}\bm{H}\cdot\bm{B}\right) = - \nabla\cdot\left(\bm{E}\times\bm{H}\right) - \bm{i}_\mathrm{e}\cdot\bm{E}
+\end{align}
+以下は、必ず必須ではないですが、電磁気を考慮した運動エネルギー保存則も併せて説明できるようになっておくと、電磁場のエネルギー保存則の意味がよりわかるでしょう。
+\begin{align*}
+    \frac{\partial}{\partial t} \sum_{i=1}^N
+    \frac{1}{2}m_i v_i^2 = \int_V \bm{i}_\mathrm{e}\cdot\bm{E} d^3x
+\end{align*}
 \section{熱力学}
+\subsection{第一法則}
+熱力学の第一法則の物理的な意味を説明してください。
+\subsection{熱力学の法則}
+以下を説明してください。
+\begin{itemize}
+    \item 定積比熱$C_V$と定圧比熱$C_p$の間の関係$C_p-C_V=R$
+    \item 断熱の場合に$pV^\gamma=\mathrm{const}$となること。ただし$\gamma=C_p/C_V$
+\end{itemize}
 \end{document}
