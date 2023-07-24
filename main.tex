@@ -9,23 +9,24 @@
 \tableofcontents
 \clearpage
 \section{はじめに}
-この文章では、堀田のもとで太陽・恒星物理学の研究を始める上で「最低限」必要な物理学の知識についてまとめます。少なくともこれだけあれば、何とか研究に必要な勉強を始められるというものです。会話する上で、これは知っていることが前提とされると言い換えても構いません。\par
-これ以上やってはいけないという意味ではまったくありませんし、むしろ余裕があるならば、やるべきです。この文章では、たとえば統計力学や量子力学には触れません。太陽・恒星物理学の磁気流体力学のみを研究対象にするならば、これらは必ずしも必要ではありません。しかし、これらは一般の物理学科を卒業した学生ならば履修しており、その考え方は非常に有用です。例を挙げるならば、量子力学で登場するBorn近似は、日震学にも使われより適切な太陽内部の波動伝播をモデル化しています。また、将来研究者、とくに大学教員になりたいみなさんは広い物理学を理解しておくことは、採用の際に重要となります。さらには、そもそもこれらの学問を学ぶことは非常に楽しいです。
+この文章では、堀田のもとで太陽・恒星物理学の研究を始める上で\underline{「最低限」必要}な物理学の知識についてまとめます。少なくともこれだけあれば、何とか研究に必要な勉強を始められるというものです。会話する上で、これは知っていることが前提とされると言い換えても構いません。\par
+これ以上の勉強をしてはいけないという意味ではまったくありませんし、むしろ余裕があるならば、さらに勉強を進めるべきです。この文章では、たとえば統計力学や量子力学には触れません。太陽・恒星物理学の磁気流体力学のみを研究対象にするならば、これらは必ずしも必要ではありません。しかし、これらは一般の物理学科を卒業した学生ならば履修しており、これらの科目を学習することで身につく考え方は有用です。例を挙げるならば、量子力学で登場するBorn近似は、日震学にも使われより適切な太陽内部の波動伝播をモデル化しています。
+また、将来大学教員になりたいみなさんは広い物理学を理解しておくことは、講義を担当する上で必須です。さらには、そもそもこれらの学問を学ぶことは非常に楽しいです。
 \par
 しかし、近年では、私のもとに訪れる学生が必ずしも物理学科出身でないことが増えました。それは1つ興味深いことであるのですが、彼/彼女らに物理学科で4年で学ぶ事柄を大学院に入ってからすべて追ってもらうのは得策でないことは明らかです。そこで、「最低限」必要な物理学をまとめておくことに思い至りました。
 \par
 ひとまずということで、作っていますが定期的に更新していく予定です。
 
 \subsection{この文章の読み方}
-この文章では、答えを示さないままいくつかの知っておいてほしい物理学的な事柄を示します。教科書を見ながら、それを自分で深くまで理解し、咀嚼してください。\par
+この文章では、答えを示さないままいくつかの知っておいてほしい物理学的な事柄を示します(そのうち答えを示すかもしれません)。教科書を見ながら、1つ1つの事柄を自分で深くまで理解し、咀嚼してください。また、問い自体に誤りがあるかもしれないので、その場合は指摘してください。\par
 物理学では、多くの数式が登場しますが、それを物理的に説明することが重要です。漫然と式変形するのではなく、それぞれの段階で数式がどのような現実の状況を表しているかを説明できるように意識してください。\par
-この文章は、githubで公開しているので、各人で\LaTeX ソースファイルをダウンロードの上、解答を作ってみると良いでしょう。
+この文章は、GitHubで公開しているので、各人で\LaTeX ソースファイルをダウンロードの上、解答を作ってみると良いでしょう。
 \par
-式を導く際は、「次元」に細心の注意を払いましょう。次元とは単位のことです。たとえば重力下の運動方程式であれば
+式を導く際は、「次元」に細心の注意を払いましょう。次元とは単位のことです。たとえば重力下の運動方程式は
 \begin{align}
     m\frac{d\bm{v}}{dt} = m \bm{g}
 \end{align}
-です。$m$は$\mathrm{g}$、$\bm{v}$は$\mathrm{cm~s^{-1}}$、$t$は$s$の単位を持つので、左辺は$\mathrm{g~cm~s^{-2}}$の次元を持っています。一方、右辺は$g$が$\mathrm{cm~s^{-2}}$の次元を持っているので、同様に$\mathrm{g~cm~s^{-2}}$の次元を持っています。当然、左辺と右辺の次元は同じになるのです。また、次元の違うもの同士を足し弾きすることはできません。これが守られていないと、物理をさっぱり理解していない証明となってしまいます。よく注意して式変形を行いましょう。
+です。$m$は$\mathrm{[g]}$、$\bm{v}$は$\mathrm{[cm~s^{-1}]}$、$t$は$\mathrm{[s]}$の単位を持つので、左辺は$\mathrm{g~cm~s^{-2}}$の次元を持っています。一方、右辺は$\bm{g}$が$\mathrm{cm~s^{-2}}$の次元を持っているので、同様に$\mathrm{g~cm~s^{-2}}$の次元を持っています。当然、左辺と右辺の次元は同じになるのです。また、次元の違うもの同士を足し引きすることはできません。これが守られていないと、物理をさっぱり理解していない証明となってしまいます。よく注意して式変形を行いましょう。
 \subsection{記法}
 この文章では、ベクトルの演算は$\nabla$, $\nabla\cdot$, $\nabla\times$を用いられて、$\mathrm{grad}$, $\mathrm{div}$, $\mathrm{rot}$は使われません。学生の皆さんにもそのようにすることを強く推奨します。前者は、微分演算をあたかもベクトルのように扱っており、その正体を掴みやすいです。たとえば$\mathrm{div}~\bm{A}$と書いてあっても、これがベクトルなのかスカラーなのかは一目ではわかりませんが。$\nabla\cdot\bm{A}$と書いてあれば、ベクトルの内積のように見え、答えがスカラーであることが一目瞭然です。
 
@@ -34,7 +35,8 @@
 \begin{itemize}
     \item 微分の数学的な定義は何ですか？$x^2$を$x$で微分すると$2x$になることを証明してください。
     \item 常微分と偏微分の違いは何ですか？
-    \item 連鎖律について説明してください。多変数の場合はどうなりますか？
+    \item テイラー展開の定義を書いてください。$\sin x$, $\cos x$, $\exp x$をそれぞれ$x=0$周りに展開してください。
+    \item 微分の連鎖律について説明してください。多変数の場合はどうなりますか？
 \end{itemize}
 \subsection{ベクトル解析}
 \subsubsection{定理}
@@ -50,17 +52,8 @@
     + \left(\bm{B}\cdot\nabla\right)\bm{A} - \left(\bm{A}\cdot\nabla\right)\bm{B}\\
     \nabla\times\nabla\bm{A} &= \nabla\left(\nabla\cdot\bm{A}\right) - \nabla^2 \bm{A}
 \end{align*}
-証明の際には、愚直に成分に分けるのではなくアインシュタインの縮約、クロネッカーのデルタ、レビチビタの記号を使うのが良いでしょう。
-1つだけ例を示します。ベクトル解析の公式の証明では式が煩雑になるので、微分を
-\begin{align}
-    \frac{\partial}{\partial x_i} \rightarrow \partial_i
-\end{align}
-と書き換えられます。ここで$x_1$, $x_2$, $x_3$は$x$, $y$, $z$を表します。するとレビチビタの記号\footnote{知らない場合は調べてください}を用いると外積と回転は
-\begin{align}
-    \bm{A}\times\bm{B} &= \epsilon_{ijk} A_j B_k \\
-    \left(\nabla\times\bm{A}\right)_i &= \epsilon_{ijk}\partial_j A_k
-\end{align}
-と書くことができます。これを用いるとたとえば最初の式は
+証明の際には、愚直に成分に分けるのではなくアインシュタインの縮約、クロネッカーのデルタ、レビチビタの記号を使うのが良いでしょう(付録\ref{sec:symbol_vector}参照)。\par
+1つだけ例を示します。最初の式は
 \begin{align}
     \left[\nabla\times\left(f\bm{A}\right)\right]_i &= \epsilon_{ijk}\partial_j \left(fA_k\right) \nonumber\\
     & = \epsilon_{ijk}\partial_j \left(fA_k\right) \nonumber\\
@@ -73,15 +66,17 @@
 \begin{align}
     \epsilon_{ijk}\epsilon_{iml} = \delta_{jm}\delta_{kl} - \delta_{jl}\delta_{km}
 \end{align}
-は、覚えておくことは必須ですが、導出は結構難しく、必ずしも見ておかなくても良いと思います。
+は、覚えておくことは必須ですが、導出は結構難しく、必ずしも見ておかなくても良いと思います(付録\ref{sec:levi_multiple}参照)。
 \subsubsection{球座標}
 太陽を全球的に扱うためには、球座標でのベクトルの取り扱いに慣れ親しむ必要があります。球座標での勾配、発散、回転のあらわな表式を何かの公式を見て書き下してください。また、発散と回転について、ガウスの定理・ストークスの定理と見比べて物理的な意味を説明してください。
 \subsection{線形代数}
-行列の固有値・固有ベクトル・対角化について説明してください。また、この考えを用いて、2次形式の標準化について説明してください。
+行列の固有値・固有ベクトル・対角化について説明してください。
+連立方程式を行列の対角化を用いて解く例について示してください。
+また、何か適当な$3\times3$の行列の逆行列を解く問題を3-4問解いてみてください。
 \subsection{フーリエ変換}
 フーリエ級数にも触れながら、フーリエ変換の物理的な意味を説明してください。
 \section{力学}
-力学には、多くの魅力的な演習問題がありますが、必ずしもそれらすべてが解ける必要はないです(大学院試験では、よく出されますが...)。それよりも、力学で定義されているいくつかの概念をしっかり理解して、その後に進むことが大切です。
+力学には、多くの魅力的な演習問題があります。しかし、必ずしもそれらすべてが解ける必要はないです(大学院試験では、よく出されますが)。それよりも、力学で定義されているいくつかの概念をしっかり理解して、その後に進むことが大切です。
 \subsection{座標}
 2次元極座標での加速度の動径成分$a_r$、$a_\theta$はそれぞれ
 \begin{align}
@@ -89,13 +84,12 @@
     a_\theta &= r\ddot{\theta} + 2\dot{r}\dot{\theta}
 \end{align}
 となることを証明してください。
-\subsection{運動方程式}
-\subsubsection{保存力}
+\subsection{保存力}
 力$\bm{F}$が保存力であるとき
 \begin{align}
     \bm{F} = - \nabla U
 \end{align}
-とポテンシャル$U$を用いて表せることを証明してください。
+とポテンシャル$U$を用いて表せることを証明してください。ストークスの定理を使えるとよいです。
 \subsection{力学的エネルギー保存}
 質点にかかる力が保存力だけの場合に、力学的エネルギーが保存することを証明してください。
 \subsection{角運動量保存}
@@ -145,7 +139,237 @@
 \subsection{熱力学の法則}
 以下を説明してください。
 \begin{itemize}
-    \item 定積比熱$C_V$と定圧比熱$C_p$の間の関係$C_p-C_V=R$
+    \item 定積熱容量$C_V$、定圧熱容量$C_p$、物質量$n$、気体定数$R$の間の関係$C_p-C_V=nR$
     \item 断熱の場合に$pV^\gamma=\mathrm{const}$となること。ただし$\gamma=C_p/C_V$
 \end{itemize}
+
+\appendix
+\section{記号を用いたベクトル解析の公式の証明}\label{sec:symbol_vector}
+    ベクトルの解析の公式を導く時には、デカルト座標でそれぞれの成分を計算することが王道ですが、しばしば煩雑です。レビチビタの記号$\epsilon_{ijk}$を組み合わせることで、ベクトル解析の公式の導出は驚くほど簡単になります。慣れるまでは難しく感じるかもしれないですが、身につけましょう。
+    \\
+    この説明では、添字の1, 2, 3が$x$, $y$, $z$に対応します。レビチビタの記号の定義は以下です。
+    \begin{align*}
+        \epsilon_{ijk} = 
+        \begin{cases}
+            1  & (i,j,k)が(1,2,3)の偶置換のとき\\
+            -1 & (i,j,k)が(1,2,3)の奇置換のとき\\
+            0  & それ以外のとき
+        \end{cases}
+    \end{align*}
+    この記号を用いるとベクトルの外積は以下のように表せます。
+    \begin{align*}
+        \left(\bm{A}\times\bm{B}\right)_i = \sum_{j=1}^3\sum_{k=1}^3 \epsilon_{ijk} A_j B_k= \epsilon_{ijk}A_jB_k
+    \end{align*}
+    ここからは添字が重なっている時は和を取る、アインシュタインの縮約を採用します。
+    $i=1$の場合に実直に書き下すと以下のようになります。
+    \begin{align*}
+        \epsilon_{1jk}A_jB_k = &
+        \epsilon_{111}A_1B_1 + 
+        \epsilon_{121}A_2B_1 + 
+        \epsilon_{131}A_3B_1 \\+ &
+        \epsilon_{112}A_1B_2 + 
+        \epsilon_{122}A_2B_2 + 
+        \epsilon_{132}A_3B_2 \\+ &
+        \epsilon_{113}A_1B_3 + 
+        \epsilon_{123}A_2B_3 + 
+        \epsilon_{133}A_3B_3 \\
+        = &
+        \epsilon_{132}e_3e_2 + 
+        \epsilon_{123}e_2e_3 \\
+        = & e_2e_3 - e_3e_2
+    \end{align*}
+    となっています。$i=1$以外についても同様です。レビチビタの記号を用いると回転は以下のように表すことができます。
+    \begin{align*}
+        \left(\nabla\times \bm{A}\right)_i &= \epsilon_{ijk} \partial_j A_k \\        
+    \end{align*}
+    ここで、$\partial_i=\partial/\partial x_i$を表す。勾配や発散は以下のように表すことができます。
+    \begin{align*}
+        (\nabla \phi)_i &= \partial_i \phi \\
+        \nabla\cdot \bm{A} &= \partial_i A_i
+    \end{align*}
+    \section{レビチビタの記号の積}\label{sec:levi_multiple}
+    ここでは、レビチビタの積に関する公式
+    \begin{align*}
+        \epsilon_{ijk}\epsilon_{iml} = \delta_{jm}\delta_{kl} - \delta_{jl}\delta_{km}
+    \end{align*}
+    を示します。
+    \subsection{レビチビタの記号とスカラー三重積}
+    まず、スカラー三重積について考えます。右手形では基底ベクトル$\bm{e}_1$, $\bm{e}_2$, $\bm{e}_3$に対して、以下のような関係が成り立ちます。
+    \begin{align*}
+        \bm{e}_1\times\bm{e}_2 =& \bm{e}_3 \\
+        \bm{e}_2\times\bm{e}_3 =& \bm{e}_1 \\
+        \bm{e}_3\times\bm{e}_1 =& \bm{e}_2 
+    \end{align*}
+    よって、基底ベクトルの外積は
+    \begin{align*}
+        \bm{e}_i\times\bm{e}_j = \epsilon_{ijm}\bm{e}_m
+    \end{align*}
+    と表すことができます。一方、基底ベクトルの内積はクロネッカーのデルタを用いて
+    \begin{align*}
+        \bm{e}_i\cdot\bm{e}_j = \delta_{ij}
+    \end{align*}
+    と表されるので、スカラー三重積は
+    \begin{align*}
+        \left(
+            \bm{e}_i\times\bm{e}_j    
+        \right)
+        \cdot \bm{e}_k
+        = \epsilon_{ijp}\bm{e}_p\cdot \bm{e}_k
+        = \epsilon_{ijp}\delta_{pk}
+        = \epsilon_{ijk}
+    \end{align*}
+    となります。つまり、レビチビタの記号はスカラー三重積を用いて表すことができます。
+    \subsection{スカラー三重積と行列式}
+    上記の議論より、スカラー三重積は行列式を用いて表すことができることがわかりました。つまり、以下の関係が成り立ちます。
+    \begin{align*}
+        \bm{A}\cdot\left(\bm{B}\times\bm{C}\right)
+        =
+        \left|
+        \begin{array}{ccc}
+            A_1 & B_1 & C_1 \\
+            A_2 & B_2 & C_2 \\
+            A_3 & B_3 & C_3 
+        \end{array}
+        \right|
+        =
+        \left|
+        \begin{array}{ccc}
+            A_1 & A_2 & A_3 \\
+            B_1 & B_2 & B_3 \\
+            C_1 & C_2 & C_3 
+        \end{array}
+        \right|    
+    \end{align*}
+    この関係の証明は実直に計算をするのが良いです。
+    \begin{align*}
+        \bm{A}\cdot\left(\bm{B}\times\bm{C}\right)
+        =&
+        A_1\left(B_2C_3 - B_3C_2\right) +
+        A_2\left(B_3C_1 - B_1C_3\right) +
+        A_3\left(B_1C_2 - B_2C_1\right) \\
+        =& A_1B_2C_3 + B_1C_2A_3 + C_1A_2B_3
+        - \left(C_1B_2A_3 + B_1A_2C_3 + A_1C_2B_3\right)
+    \end{align*}
+    となり、行列式と同じであることがわかります。行列式の導出は、たすきがけの法則や余因子展開を用いて求めると良いでしょう。\\
+    念のために余因子展開を用いた行列式の計算も示します。
+    \begin{align}
+        \left|
+        \begin{array}{ccc}
+            A_1 & B_1 & C_1 \\
+            A_2 & B_2 & C_2 \\
+            A_3 & B_3 & C_3 
+        \end{array}
+        \right|
+        = 
+        A_1
+        \left|
+        \begin{array}{cc}
+            B_2 & C_2 \\
+            B_3 & C_3 \\
+        \end{array}
+        \right|
+        - B_1
+        \left|
+        \begin{array}{cc}
+            A_2 & C_2 \\
+            A_3 & C_3 \\
+        \end{array}
+        \right|
+        + C_1
+        \left|
+        \begin{array}{cc}
+            A_2 & B_2 \\
+            A_3 & B_3 \\
+        \end{array}
+        \right|                
+    \end{align}
+    \subsection{スカラー三重積を用いたレビチビタの記号の積の証明}
+    スカラー三重積が、行列式で表されることがわかったのでこれを用いてレビチビタの記号の積の証明を行います。
+    \begin{align*}
+        \epsilon_{ijk}\epsilon_{iml} =&
+        \left|
+        \begin{array}{ccc}
+            \left(\bm{e}_i\right)_1 & \left(\bm{e}_i\right)_2 & \left(\bm{e}_i\right)_3 \\
+            \left(\bm{e}_j\right)_1 & \left(\bm{e}_j\right)_2 & \left(\bm{e}_j\right)_3 \\
+            \left(\bm{e}_k\right)_1 & \left(\bm{e}_k\right)_2 & \left(\bm{e}_k\right)_3 \\
+        \end{array}
+        \right|
+        \left|
+        \begin{array}{ccc}
+            \left(\bm{e}_i\right)_1 & \left(\bm{e}_m\right)_1 & \left(\bm{e}_l\right)_1 \\
+            \left(\bm{e}_i\right)_2 & \left(\bm{e}_m\right)_2 & \left(\bm{e}_l\right)_2 \\
+            \left(\bm{e}_i\right)_3 & \left(\bm{e}_m\right)_3 & \left(\bm{e}_l\right)_3 \\
+        \end{array}
+        \right| \\
+        =&
+        \left|
+            \begin{array}{ccc}
+                \bm{e}_i\cdot\bm{e}_i & \bm{e}_i\cdot\bm{e}_m & \bm{e}_i\cdot\bm{e}_l \\
+                \bm{e}_j\cdot\bm{e}_i & \bm{e}_j\cdot\bm{e}_m & \bm{e}_j\cdot\bm{e}_l \\
+                \bm{e}_k\cdot\bm{e}_i & \bm{e}_k\cdot\bm{e}_m & \bm{e}_k\cdot\bm{e}_l \\
+            \end{array}
+        \right|\\
+        =&
+        \left|
+        \begin{array}{ccc}
+            \delta_{ii} & \delta_{im} & \delta_{il} \\
+            \delta_{ji} & \delta_{jm} & \delta_{jl} \\
+            \delta_{ki} & \delta_{km} & \delta_{kl} \\
+        \end{array}
+        \right| \\
+        =&
+        \delta_{ii} 
+        \left|
+        \begin{array}{cc}
+            \delta_{jm} & \delta_{jl} \\
+            \delta_{km} & \delta_{kl} \\
+        \end{array}
+        \right| 
+        -
+        \delta_{im} 
+        \left|
+        \begin{array}{cc}
+            \delta_{ji} & \delta_{jl} \\
+            \delta_{ki} & \delta_{kl} \\
+        \end{array}
+        \right|
+        +
+        \delta_{il} 
+        \left|
+        \begin{array}{cc}
+            \delta_{ji} & \delta_{jm} \\
+            \delta_{ki} & \delta_{km} \\
+        \end{array}
+        \right| \\
+        =&
+        3
+        \left|
+        \begin{array}{cc}
+            \delta_{jm} & \delta_{jl} \\
+            \delta_{km} & \delta_{kl} \\
+        \end{array}
+        \right| 
+        -
+        \left|
+        \begin{array}{cc}
+            \delta_{jm} & \delta_{jl} \\
+            \delta_{km} & \delta_{kl} \\
+        \end{array}
+        \right| 
+        + \left|
+        \begin{array}{cc}
+            \delta_{jl} & \delta_{jm} \\
+            \delta_{kl} & \delta_{km} \\
+        \end{array}
+        \right| \\
+        = &
+        \left|
+        \begin{array}{cc}
+            \delta_{jm} & \delta_{jl} \\
+            \delta_{km} & \delta_{kl} \\
+        \end{array}
+        \right| \\
+        = \delta_{jm}\delta_{kl} - \delta_{jl}\delta_{km}
+    \end{align*}
+    となり積の公式が導かれました。
 \end{document}
